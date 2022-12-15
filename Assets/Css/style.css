@@ -91,6 +91,14 @@ h3 {
 .nav-tabs {
     border-bottom: 0px;
 }
+.step-order {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #666;
+    margin-top: 14px;
+}
 /*  Shopping Cart */
 .shopping-cart {
     width: 100%;
@@ -98,7 +106,6 @@ h3 {
     margin-bottom: 17px;
 }
 .shopping-cart th {
-    font-family: "Lato-Bold";
     color: #666;
     padding: 9px 0;
     border-bottom: 1px solid #e6e6e6;
@@ -118,7 +125,7 @@ h3 {
 .product-remove{
     width: 4.03%;
 }
-table.cart td {
+.shopping-cart td {
     padding: 13px 0;
     border-bottom: 1px solid #e6e6e6;
 }
@@ -131,9 +138,35 @@ table.cart td {
     background: #f2f2f2;
     text-align: center;
 }
+.product-detail a {
+    color: #666;
+    display: block;
+    margin-bottom: 6px;
+}
+.product-detail span {
+    color: #999;
+}
+.item-thumb {
+    display: inline-block;
+    border: 1px solid #e6e6e6;
+}
+.total-price {
+    width: 39.78%;
+    text-align: center;
+}
+.total-price span {
+    color: #92c752;
+    font-weight: 700;
+}
+.product-remove a {
+    color: #666;
+}
+.Price-amount{
+    padding: 12px 0;
+    color: #333;
+}
 /* Cart Total */
 .cart-totals th {
-    font-family: "Lato-Bold";
     color: #333;
     text-align: left;
     width: 65.81%;
@@ -185,4 +218,32 @@ ul {
 }
 .jsButtons div:first-child button {
     width: 97px;
+}
+.finishButtons{
+    display: flex   ;
+}
+.finishButtons button {
+    width: 234px;
+}
+.finishButtons div button {
+    border: none;
+    display: inline-flex;
+    height: 42px;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    background: #8eb852;
+    text-transform: uppercase;
+    justify-content: center;
+    letter-spacing: 1px;
+    font-size: 15px;
+    border-radius: 3px;
+}
+.btn-check:focus+.btn, .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+.btn:hover {
+    color: #ffffff;
+    background-color: #a1d15e;
 }

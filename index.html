@@ -25,26 +25,34 @@
         <!-- Step 1 Picture -->
         <li class="nav-link " data-trigger='step1'>
           <a href="javascript:void(0)" class="nav-link" id="step1-tab" type="button"><img
-              src="/Assets/Images/step-1-active.png" alt=""></a>
+              src="/Assets/Images/step-1-active.png" alt="" id="step1-img" data-id="1" onclick="stepimg1()">
+              <span class="step-order">Step 01</span>
+            </a>
         </li>
         <span><img src="Assets/Images/step-arrow (1).png" alt="arrow" class="step-arrow"></span>
         <!-- Step 2 Picture -->
 
         <li class="nav-link " data-trigger='step2'>
           <a class="nav-link" href="javascript:void(0)" id="step2-tab" type="button"><img
-              src="/Assets/Images/step-2.png" alt=""></a>
+              src="/Assets/Images/step-2.png" alt="" id="step2-img"data-id="2" onclick="stepimg2()" >
+              <span class="step-order">Step 02</span>
+            </a>
         </li>
         <span><img src="Assets/Images/step-arrow (1).png" alt="arrow" class="step-arrow"></span>
         <!-- Step 3 Picture -->
         <li class="nav-link " data-trigger='step3'>
           <a class="nav-link" href="javascript:void(0)" id="step3-tab" type="button"><img
-              src="/Assets/Images/step-3.png" alt=""></a>
+              src="/Assets/Images/step-3.png" alt="" id="step3-img" data-id="3" onclick="stepimg3()">
+              <span class="step-order">Step 03</span>
+            </a>
         </li>
         <span><img src="Assets/Images/step-arrow (1).png" alt="arrow" class="step-arrow"></span>
         <!-- Step 4 Picture -->
         <li class="nav-link " data-trigger='step4'>
           <a href="javascript:void(0)" class="nav-link" id="step4-tab" type="button"><img
-              src="/Assets/Images/step-4.png" alt=""></a>
+              src="/Assets/Images/step-4.png" alt="" id="step4-img" data-id="4" onclick="stepimg4()">
+              <span class="step-order">Step 04</span>
+            </a>
         </li>
       </ul>
       <!--  -->
@@ -242,7 +250,7 @@
                         </label>
                         <label>
                           <input type="radio" name="shipping"> Local pickup:
-                          <span>$</span><span>0.00</span>
+                          <span><strong>$</strong></span><span><strong>0.00</strong></span>
                           <span class="checkmark"></span>
                         </label>
                       </div>
@@ -261,7 +269,7 @@
                     <th>Total</th>
                     <td data-title="Total">
                       <span class="Price-amount amount">
-                        <span class="Price-currencySymbol">$</span>64.69
+                        <span class="Price-currencySymbol">$</span><strong>64.69</strong>
                       </span>
                     </td>
                   </tr>
@@ -272,15 +280,21 @@
         </div>
       </div>
       <!-- BACK NEXT CHECKOUT BUTTONS  -->
-      <div class=" jsButtons col-md-12 row py-2">
+      <div class=" jsButtons col-md-12 row py-1">
         <ul role="menu" aria-label="Pagination">        
-        <div class="col-2">
+        <div class="col-2 previous">
           <button type="button" class="btn" onclick="prev()">Back</button>
         </div>
-        <div class="col-2">
+        <div class="col-2 next">
           <button type="button" class="btn" onclick="next()">Continue</button>
         </div>
+
       </ul>
+      </div>
+      <div class=" finishButtons col-md-12 row justify-content-center">
+                <div class="col-2 finish">
+            <button type="button" class="btn"  onclick="finish()">Proceed to checkout</button>
+          </div>
       </div>
     </form>
   </div>
