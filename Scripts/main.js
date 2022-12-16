@@ -5,104 +5,61 @@ $(document).ready(() => {
   $("#step1").show();
   // Show multitabs step
   $(document).on("click", "ul.multiTabs>li", function () {
+    //Show data for tabs
     var TabId = $(this).attr("data-trigger");
-    $("div#" + TabId + " ").show('slow');
+    $("div#" + TabId + " ").fadeIn();
+    $(`#step${currentTab}-img`).attr("src",`/Assets/Images/step-${currentTab}.png`);
+    // Change after click
     currentTab = parseInt(TabId.replace("step", ""));
+    $(`#step${currentTab}-img`).attr("src",`/Assets/Images/step-${currentTab}-active.png`);
     $(".tabcontent:not(#" + TabId + ")").hide();
-    console.log('current: ' +TabId +currentTab );
-      if(currentTab>3){
-      $( ".next" ).hide();
+    //functionality for current tab buttons
+    totalSteps = 3;
+    if (currentTab > totalSteps) {
+      $(".next").hide();
       $(".previous").hide();
       $(".finish").show();
-    }else{
-      $( ".next" ).show();
+    } else {
+      $(".next").show();
       $(".previous").show();
       $(".finish").hide();
     }
-
   });
 });
 // Next Button function
+let totalSteps = 0;
 function next() {
-  if (currentTab < 4) {
+  totalSteps = 4;
+  if (currentTab < totalSteps) {
     $(".tabcontent").hide();
+    $(`#step${currentTab}-img`).attr("src",`/Assets/Images/step-${currentTab}.png`);
     currentTab++;
-    $("#step" + currentTab).show('slow');
+    $("#step" + currentTab).fadeIn();
+    $(`#step${currentTab}-img`).attr("src",`/Assets/Images/step-${currentTab}-active.png`);
   }
-  console.log('outnexxt'+ currentTab)
-
 }
 // Previus Button Function
 function prev() {
-  if (currentTab > 1) {
+  totalSteps = 1;
+  if (currentTab > totalSteps) {
     $(".tabcontent").hide();
+    $(`#step${currentTab}-img`).attr("src",`/Assets/Images/step-${currentTab}.png`);
     currentTab--;
-    $("#step" + currentTab).show('slow');
+    $("#step" + currentTab).fadeIn();
+    $(`#step${currentTab}-img`).attr("src",`/Assets/Images/step-${currentTab}-active.png`);
   }
-  console.log('outprev'+ currentTab)
 }
-
-$(document).ready(function(){
-
-    $(".finish").hide();
-      $( ".next" ).click(function( event ) {
-        if(currentTab>3){
-        event.preventDefault();
-        $( this ).hide();
-        $(".previous").hide();
-        $(".finish").show();
-      }
-    });
+// Functionality for Buttons
+var buttonHide = 0;
+$(document).ready(function () {
+  buttonHide = 3;
+  $(".finish").hide();
+  $(".next").click(function (event) {
+    if (currentTab > buttonHide) {
+      event.preventDefault();
+      $(this).hide();
+      $(".previous").hide();
+      $(".finish").show();
+    }
   });
-
-function stepimg1(){
-  var dataid = $('#step1-img').data("id");
-  if(dataid==1 ){
-  if( $('#step1-img').attr("src", "/Assets/Images/step-1.png")){
-    $('#step1-img').attr("src", "/Assets/Images/step-1-active.png");
-    $('#step2-img').attr("src", "/Assets/Images/step-2.png");
-    $('#step3-img').attr("src", "/Assets/Images/step-3.png");
-    $('#step4-img').attr("src", "/Assets/Images/step-4.png");
-    console.log('gello')
-  }
-  console.log('gello')
-}}
-function stepimg2(){
-  var dataid = $('#step2-img').data("id");
-  console.log(dataid)
-  if(dataid==2){
-  if( $('#step2-img').attr("src", "/Assets/Images/step-2.png")){
-    $('#step1-img').attr("src", "/Assets/Images/step-1.png");
-    $('#step2-img').attr("src", "/Assets/Images/step-2-active.png");
-    $('#step3-img').attr("src", "/Assets/Images/step-3.png");
-    $('#step4-img').attr("src", "/Assets/Images/step-4.png");
-    console.log('hello')
-  }
-  console.log('hello')
-}} 
-function stepimg3(){
-  var dataid = $('#step3-img').data("id");
-  console.log(dataid)
-  if(dataid==3){
-  if( $('#step3-img').attr("src", "/Assets/Images/step-3.png")){
-    $('#step1-img').attr("src", "/Assets/Images/step-1.png");
-    $('#step2-img').attr("src", "/Assets/Images/step-2.png");
-    $('#step3-img').attr("src", "/Assets/Images/step-3-active.png");
-    $('#step4-img').attr("src", "/Assets/Images/step-4.png");
-    console.log('hello')
-  }
-  console.log('hello')
-}} 
-function stepimg4(){
-  var dataid = $('#step4-img').data("id");
-  console.log(dataid)
-  if(dataid==4){
-  if( $('#step4-img').attr("src", "/Assets/Images/step-4.png")){
-    $('#step1-img').attr("src", "/Assets/Images/step-1.png");
-    $('#step2-img').attr("src", "/Assets/Images/step-2.png");
-    $('#step3-img').attr("src", "/Assets/Images/step-3.png");
-    $('#step4-img').attr("src", "/Assets/Images/step-4-active.png");
-    console.log('hello')
-  }
-  console.log('hello')
-}} 
+});
